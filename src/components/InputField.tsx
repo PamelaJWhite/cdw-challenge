@@ -1,7 +1,6 @@
-import { addDoc, collection } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase"
-import UserType from "../types/userType"
 import "./styles.css";
 
 //all the props we bring in need types
@@ -15,7 +14,6 @@ interface Props {
 const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) => {
   // console.log("username: ", usernameInput)
   //state for data coming in
-
   const [data, setData] = useState({
     updated: false,
     name: "",
@@ -25,9 +23,10 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
     following: 0,
     created: ""
   })
+  //state for managing success/ error messages
   const [error, setError] = useState(false)
   const [message, setMessage] = useState(false)
-  // const [reload, setReload] = useState(false)
+  
 
   const displayMessage = () =>{
     if(message){
@@ -106,8 +105,6 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
       document.removeEventListener("keydown", keyDownHandler);
     };
   }, [usernameInput]);
-
-  //? remove spaces from search ?
 
   return (
     <form className="inputForm">

@@ -4,7 +4,6 @@ import "./App.css";
 
 import InputField from "./components/InputField";
 import UserList from "./components/UserList";
-import UserType  from "./types/userType"
 
 //give App type React.FC, functional component
 const App: React.FC = () => {

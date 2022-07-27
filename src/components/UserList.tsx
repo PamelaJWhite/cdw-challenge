@@ -6,7 +6,6 @@ import "./styles.css";
 interface Props {
   usernameInput: string | number;
   updatePage: boolean
-  // setUsernameInput: React.Dispatch<React.SetStateAction<string | number>>; //this is copied from setTodo where it was defined; hover and get all this crap
 }
 
 const UserList = ({usernameInput, updatePage}: Props) => {
