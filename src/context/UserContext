@@ -1,0 +1,18 @@
+// import React, { createContext, useState, useEffect } from "react";
+// import { Context } from "vm";
+
+// interface ContextInterface {
+//   userNameInput: string | number;
+//   setUserNameInput: React.SetStateAction<string | number> //will need to change this!!
+// }
+// const UserContext = createContext<ContextInterface|null>(null);
+
+// const ContextProvider:ContextInterface = () => {
+//   const [userNameInput, setUserNameInput] = useState<string|number>("")
+// }
+
+// export const App = () = (
+//   <UserContext.Provider value={ContextProvider}>...</Context.Provider
+// )
+
+

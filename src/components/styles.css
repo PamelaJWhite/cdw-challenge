@@ -1,0 +1,66 @@
+.inputForm_input {
+  
+  width: 97vw;
+  height: 30px;
+  text-align: center;
+  background-color:rgb(185,224,165);
+  border: none;
+  margin-top: 15px;
+}
+
+.successMessage {
+  border: 1px solid blue;
+  margin: 5px 0px;
+}
+
+
+/* ---UserList */
+
+.table{
+  width: 98vw;
+  border-collapse: collapse;
+}
+
+.headingRow {
+  background-color:rgb(249,229,153);
+  height: 25px;
+
+}
+
+.insideTH {
+  margin: 0;
+  border-left: 1px solid;
+}
+
+/* I really don't like using an extra class here, but my first attempt at first-child wasn't working, so I needed a quiick work-around */
+.firstTH{
+  border-left: none;
+}
+
+.tableHeading:last-child{
+  border-right: none;
+}
+
+td {
+  height: 20px;
+}
+
+.rowSpacing{
+  height: 2px;
+}
+
+.tableRows{
+  width: 98vw;
+}
+.tableRow {
+  background-color:rgb(200,200,200);
+}
+
+.insideTD {
+  margin: 0;
+  border-left: 1px solid;
+  height: 16px;
+  font-size: 15px;
+  font-weight:500
+}
+

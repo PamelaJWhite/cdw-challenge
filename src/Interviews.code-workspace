@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../../../Desktop/cdw-challenge/node_modules"
+	},
+	{
+		"path": "../../../../../Desktop/cdw-challenge/public"
+	},
+	{
+		"path": "../../../../../Desktop/cdw-challenge/src"
+	}
+],
+  "settings": {}
+}
