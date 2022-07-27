@@ -9,7 +9,6 @@
 }
 
 .successMessage {
-  border: 1px solid blue;
   margin: 5px 0px;
 }
 
@@ -31,8 +30,7 @@
   margin: 0;
   border-left: 1px solid;
 }
-
-/* I really don't like using an extra class here, but my first attempt at first-child wasn't working, so I needed a quiick work-around */
+/* is this working? */
 .firstTH{
   border-left: none;
 }

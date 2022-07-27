@@ -1,10 +1,12 @@
+//external imports
 import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
+//internal imports
 import { db } from "../firebase"
 import "./styles.css";
 
-//all the props we bring in need types
-//so create an interface that sets the types of the props
+//props need types
+//interface that sets the types of the props
 interface Props {
   usernameInput: string | number;
   setUsernameInput: React.Dispatch<React.SetStateAction<string | number>>; //this is copied from setTodo where it was defined; hover and get all 
@@ -12,7 +14,6 @@ interface Props {
 }
 
 const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) => {
-  // console.log("username: ", usernameInput)
   //state for data coming in
   const [data, setData] = useState({
     updated: false,
@@ -27,7 +28,7 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
   const [error, setError] = useState(false)
   const [message, setMessage] = useState(false)
   
-
+  //----------DISPLAY SUCCESS OR ERROR MESSAGE
   const displayMessage = () =>{
     if(message){
       return `Success: user ${usernameInput} added to the db.`
@@ -46,8 +47,7 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
 
   //function to reach github API
   const makeAPIcall = () => {
-    // console.log("do you want me to call your mother? usernameInput: ", usernameInput)
-  
+
     fetch("https://api.github.com/users/" + usernameInput)
       .then((response) => response.json())
       .then((res) => {
@@ -72,29 +72,23 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
       .catch(err => setError(err))
   };
 
+  //When data have been updated, send them to the DB and set state to update page
   useEffect(() => {
     if(data.updated === true){
       console.log("ready to send")
       sendUser()
       setUpdatePage(true)
     }
-    
   }, [data.name])
 
-
-  //use effect to handle submit on enter key
+  //---------HANDLE SUBMIT ON ENTER KEY
+  
   useEffect(() => {
-    // console.log("Where's my username? outside keydown: ", usernameInput)
-
+  
     const keyDownHandler = (event: any) => {
-      // console.log("User pressed: ", event.key);
-      // console.log("Where's my username? outside if: ", usernameInput)
-
 
       if (event.key === "Enter") {
         event.preventDefault();
-        // console.log("Where's my username?: ", usernameInput)
-
         makeAPIcall();
       }
     };
@@ -115,7 +109,7 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
         value={usernameInput}
         onChange={(e) => setUsernameInput(e.target.value)}
       ></input>
-      <h6 className="successMessage">{displayMessage()}</h6>
+      <h5 className="successMessage">{displayMessage()}</h5>
     </form>
   );
 };

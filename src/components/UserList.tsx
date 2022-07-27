@@ -1,8 +1,10 @@
+//external imports
 import React, { useState, useEffect } from "react";
-import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
-
+//internal imports
+import { db } from "../firebase";
 import "./styles.css";
+
 interface Props {
   usernameInput: string | number;
   updatePage: boolean
@@ -24,7 +26,6 @@ const UserList = ({usernameInput, updatePage}: Props) => {
     };
     getUsers();
   }, [updatePage]);
-  //---------END LOGIG FOR GETTING USERS FROM DB------------
   
   return (
     <table className="table">
@@ -55,12 +56,10 @@ const UserList = ({usernameInput, updatePage}: Props) => {
       </thead>
       <div className="rowSpacing"></div>
       <tbody>
-        {/*  map over users, create tr for each one*/}
         {users.map((user) => {
           return (
             <tr className="tableRow">
               <td>
-                {/* need to change this href to the user's github */}
                 <a className="insideTD" target="_blank" href={`https://www.github.com/${user.username}`}>
                   { user.username }
                 </a>
@@ -87,7 +86,6 @@ const UserList = ({usernameInput, updatePage}: Props) => {
           );
         })}
       </tbody>
-
       <div className="rowSpacing"></div>
     </table>
   );
