@@ -34,7 +34,9 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
       return `Success: user ${usernameInput} added to the db.`
     }
     else if(error){
+
       return `Error: error adding ${usernameInput} to the db.`
+
     }
   }
   //----------SEND INFO TO DB
@@ -91,6 +93,7 @@ const InputField = ({ usernameInput, setUsernameInput, setUpdatePage }: Props) =
         event.preventDefault();
         makeAPIcall();
       }
+
     };
 
     document.addEventListener("keydown", keyDownHandler);

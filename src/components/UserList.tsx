@@ -28,6 +28,7 @@ const UserList = ({usernameInput, updatePage}: Props) => {
   }, [updatePage]);
   
   return (
+    
     <table className="table">
       <thead>
         <tr className="headingRow">
